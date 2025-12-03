@@ -3,8 +3,8 @@ import pandas as pd
 
 # Function to load and clean data
 def load_data():
-    DATABASE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTMvqtDGEsFiviYP0gOt-4oX0lgNj0y-kXtGxWrSqh0L1hBQ8XwZlUS6wtbUegI6RPmihvYkiVTeDtE/pub?gid=0&single=true&output=csv"
-    RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRhG34LYzkc-urSC1iMxv0bNP1fXQ0wb7HmGFppmQcoukxdSp6Bpx4ARGm9PPD20bclCN65ybGhQo4E/pub?gid=0&single=true&output=csv"
+    DATABASE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAxA9VZ8KpyHJndvE7e3qA3U2emxqKEtCIMEHYY0dYeUZL4ky3QJEayCbF7E9l22t7tV82bSBdbjHp/pub?gid=195728822&single=true&output=csv"
+    RESPONSE_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTAxA9VZ8KpyHJndvE7e3qA3U2emxqKEtCIMEHYY0dYeUZL4ky3QJEayCbF7E9l22t7tV82bSBdbjHp/pub?gid=693994156&single=true&output=csv"
 
     # Load both course database and response data
     course_database = pd.read_csv(DATABASE_SHEET_URL)
@@ -12,7 +12,7 @@ def load_data():
 
     # Clean up data (strip and lowercase for consistency)
     course_database['Matakuliah'] = course_database['Matakuliah'].str.strip().str.upper()
-    response_data['Nama mata kuliah yang diampu sesuai nama dosen yang dipilih sebelumnya'] = response_data['Nama mata kuliah yang diampu sesuai nama dosen yang dipilih sebelumnya'].str.strip().str.upper()
+    response_data['Mata Kuliah'] = response_data['Nama mata kuliah yang diampu sesuai nama dosen yang dipilih sebelumnya'].str.strip().str.upper()
 
     # Ensure NIM columns are of the same type for comparison
     course_database['NIM'] = course_database['NIM'].astype(str)
